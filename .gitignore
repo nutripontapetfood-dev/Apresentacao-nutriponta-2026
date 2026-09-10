@@ -1,0 +1,15 @@
+# Node / Dependencies
+node_modules/
+npm-debug.log*
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# IDE & Environment
+.vscode/
+.idea/
+*.local
+
+# Vercel
+.vercel/
