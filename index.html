@@ -424,14 +424,16 @@
 
     .media-frame {
       width: 100%;
-      height: clamp(150px, 24vh, 420px);
+      max-width: 480px;
+      height: clamp(240px, 36vh, 360px);
+      aspect-ratio: 4 / 3;
+      margin: 8px auto 0 auto;
       border-radius: var(--radius-md);
       overflow: hidden;
       box-shadow: 0 12px 32px rgba(6, 38, 76, 0.18);
-      border: 1px solid rgba(6, 38, 76, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.15);
       position: relative;
       background: var(--navy-900);
-      margin-top: 6px;
     }
 
     .media-frame img {
@@ -439,14 +441,39 @@
       height: 100%;
       object-fit: cover;
       object-position: center center;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .media-frame:hover img {
+      transform: scale(1.03);
     }
 
     .media-frame img.img-dog {
-      object-position: center 18%;
+      object-position: center 40%;
     }
 
     .media-frame img.img-cat {
-      object-position: center 15%;
+      object-position: center 45%;
+    }
+
+    .media-overlay-tag {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      background: rgba(4, 20, 41, 0.82);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: var(--gold-500);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      z-index: 3;
+      pointer-events: none;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
     }
 
     /* Bullet List */
@@ -1039,10 +1066,15 @@
       .split-layout {
         grid-template-columns: 1fr 1fr;
         gap: 48px;
+        align-items: center;
       }
 
       .media-frame {
-        height: clamp(320px, 46vh, 500px);
+        width: 100%;
+        max-width: 480px;
+        height: clamp(320px, 48vh, 460px);
+        aspect-ratio: 4 / 3;
+        justify-self: center;
         border-radius: var(--radius-lg);
       }
 
@@ -1203,6 +1235,7 @@
             <img class="img-factory"
               src="https://wsrv.nl/?output=webp&q=75&url=https%3A%2F%2Fnutriponta.com.br%2Fimg-racoes-deposito.jpeg&w=3840"
               alt="Logística e Depósito Nutriponta" width="1200" height="800" loading="lazy" />
+            <div class="media-overlay-tag">🏭 Fábrica &amp; Depósito • Penha-SC</div>
           </div>
         </div>
         <div class="source-note">Dados institucionais: site oficial Nutriponta.</div>
@@ -1279,8 +1312,9 @@
           </div>
           <div class="media-frame">
             <img class="img-dog"
-              src="https://wsrv.nl/?output=webp&q=75&url=https%3A%2F%2Fnutriponta.com.br%2Fhero%2Fcaes-section-mobile.jpeg&w=3840"
-              alt="Linha de cães Nutriponta" width="1200" height="800" loading="lazy" />
+              src="./img-lunch-dog.jpg"
+              alt="Linha Lunch Dog Nutriponta" width="1200" height="900" loading="lazy" />
+            <div class="media-overlay-tag">🐶 Linha Nutriponta Lunch Dog</div>
           </div>
         </div>
         <div class="source-note">Linhas e produtos baseados nos catálogos oficiais Nutriponta.</div>
@@ -1358,8 +1392,9 @@
           </div>
           <div class="media-frame">
             <img class="img-cat"
-              src="https://wsrv.nl/?output=webp&q=75&url=https%3A%2F%2Fnutriponta.com.br%2Fhero%2Fgato-section-mobile.jpeg&w=3840"
-              alt="Linha de gatos Nutriponta" width="1200" height="800" loading="lazy" />
+              src="./img-lunch-cat.jpg"
+              alt="Linha Lunch Cat Nutriponta" width="1200" height="900" loading="lazy" />
+            <div class="media-overlay-tag">🐱 Linha Nutriponta Lunch Cat</div>
           </div>
         </div>
         <div class="source-note">Linhas citadas no site oficial Nutriponta.</div>
