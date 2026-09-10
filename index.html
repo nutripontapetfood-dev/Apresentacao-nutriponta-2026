@@ -109,6 +109,12 @@
       color: var(--navy-900);
     }
 
+    /* Focus Visible Ring (Web Interface Guidelines Compliance) */
+    :focus-visible {
+      outline: 2px solid var(--gold-500) !important;
+      outline-offset: 2px !important;
+    }
+
     /* Skip to Main Content Link (Accessibility) */
     .skip-link {
       position: absolute;
@@ -121,7 +127,7 @@
       font-weight: 800;
       font-size: 13px;
       z-index: 1000;
-      transition: top 0.2s ease;
+      transition: top var(--transition-fast);
       text-decoration: none;
       box-shadow: var(--shadow-md);
     }
@@ -219,7 +225,7 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      transition: all var(--transition-fast);
+      transition: transform var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
     }
 
     .icon-btn:hover,
@@ -244,6 +250,7 @@
       min-height: -webkit-fill-available;
       position: relative;
       overflow: hidden;
+      scroll-margin-top: 60px;
     }
 
     .slide {
@@ -345,6 +352,7 @@
       letter-spacing: -0.03em;
       color: var(--navy-900);
       margin-bottom: 8px;
+      text-wrap: balance;
     }
 
     .dark .slide-title {
@@ -358,6 +366,7 @@
       max-width: 820px;
       margin-bottom: 14px;
       font-weight: 500;
+      text-wrap: pretty;
     }
 
     .dark .slide-subtitle {
@@ -379,7 +388,7 @@
       -webkit-backdrop-filter: blur(12px);
       padding: 10px 12px;
       border-radius: var(--radius-sm);
-      transition: transform var(--transition-fast);
+      transition: transform var(--transition-fast), background-color var(--transition-fast);
     }
 
     .kpi-card:hover {
@@ -394,6 +403,7 @@
       color: var(--gold-500);
       line-height: 1.1;
       margin-bottom: 2px;
+      font-variant-numeric: tabular-nums;
     }
 
     .kpi-card span {
@@ -518,6 +528,7 @@
       color: var(--navy-800);
       margin-bottom: 4px;
       font-weight: 800;
+      text-wrap: balance;
     }
 
     .feature-card p {
@@ -557,6 +568,7 @@
       justify-content: center;
       font-weight: 900;
       font-size: 15px;
+      font-variant-numeric: tabular-nums;
     }
 
     .line-card h3 {
@@ -593,7 +605,7 @@
       justify-content: space-between;
       text-decoration: none;
       color: var(--white);
-      transition: all var(--transition-fast);
+      transition: transform var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
       min-height: 48px;
     }
 
@@ -722,7 +734,7 @@
       font-weight: 900;
       text-decoration: none;
       box-shadow: 0 8px 20px rgba(246, 166, 35, 0.4);
-      transition: all var(--transition-fast);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), color var(--transition-fast);
       border: none;
       cursor: pointer;
       width: 100%;
@@ -771,7 +783,7 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      transition: all var(--transition-fast);
+      transition: transform var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast);
     }
 
     .nav-arrow:hover:not(:disabled) {
@@ -798,6 +810,7 @@
       letter-spacing: 0.06em;
       min-width: 50px;
       text-align: center;
+      font-variant-numeric: tabular-nums;
     }
 
     .slide-counter span {
@@ -817,7 +830,7 @@
       min-height: 38px;
       border-radius: var(--radius-full);
       cursor: pointer;
-      transition: all var(--transition-fast);
+      transition: background-color var(--transition-fast), color var(--transition-fast);
     }
 
     .dock-menu-btn:hover {
@@ -835,7 +848,7 @@
       z-index: 200;
       opacity: 0;
       visibility: hidden;
-      transition: all var(--transition-smooth);
+      transition: opacity var(--transition-smooth), visibility var(--transition-smooth);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -908,7 +921,7 @@
       align-items: center;
       gap: 12px;
       cursor: pointer;
-      transition: all var(--transition-fast);
+      transition: transform var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast);
       color: white;
       text-align: left;
       width: 100%;
@@ -933,6 +946,7 @@
       justify-content: center;
       font-size: 12px;
       flex-shrink: 0;
+      font-variant-numeric: tabular-nums;
     }
 
     .drawer-title {
@@ -1112,7 +1126,7 @@
     </div>
     <div class="header-controls">
       <button class="icon-btn" id="btnFullscreen" title="Alternar Tela Cheia" aria-label="Alternar Tela Cheia">
-        <svg viewBox="0 0 24 24">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
           <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" />
         </svg>
       </button>
@@ -1126,7 +1140,7 @@
     <section class="slide dark active" data-slide="1" aria-label="Slide 1: Capa Nutriponta">
       <img class="slide-bg"
         src="https://wsrv.nl/?output=webp&q=75&url=https%3A%2F%2Fnutriponta.com.br%2Fhero%2Fimg-1-mobile.jpeg&w=3840"
-        alt="Fábrica e Nutrição Animal Nutriponta" loading="eager" fetchpriority="high" />
+        alt="Fábrica e Nutrição Animal Nutriponta" width="1920" height="1080" loading="eager" fetchpriority="high" />
       <div class="slide-overlay"></div>
 
       <div class="slide-content">
@@ -1170,7 +1184,7 @@
           <div class="media-frame">
             <img class="img-factory"
               src="https://wsrv.nl/?output=webp&q=75&url=https%3A%2F%2Fnutriponta.com.br%2Fimg-racoes-deposito.jpeg&w=3840"
-              alt="Logística e Depósito Nutriponta" loading="lazy" />
+              alt="Logística e Depósito Nutriponta" width="1200" height="800" loading="lazy" />
           </div>
         </div>
         <div class="source-note">Dados institucionais: site oficial Nutriponta.</div>
@@ -1248,7 +1262,7 @@
           <div class="media-frame">
             <img class="img-dog"
               src="https://wsrv.nl/?output=webp&q=75&url=https%3A%2F%2Fnutriponta.com.br%2Fhero%2Fcaes-section-mobile.jpeg&w=3840"
-              alt="Linha de cães Nutriponta" loading="lazy" />
+              alt="Linha de cães Nutriponta" width="1200" height="800" loading="lazy" />
           </div>
         </div>
         <div class="source-note">Linhas e produtos baseados nos catálogos oficiais Nutriponta.</div>
@@ -1267,7 +1281,7 @@
           <a class="catalog-card" href="https://online.flippingbook.com/view/497112258/" target="_blank"
             rel="noopener noreferrer">
             <div class="catalog-card-header">
-              <span class="catalog-icon">📖</span>
+              <span class="catalog-icon" aria-hidden="true">📖</span>
               <div class="catalog-info">
                 <h3>Lunch Dog / Lunch Cat</h3>
                 <p>Catálogo Oficial Linha Lunch</p>
@@ -1278,7 +1292,7 @@
           <a class="catalog-card" href="https://online.flippingbook.com/view/497420565/" target="_blank"
             rel="noopener noreferrer">
             <div class="catalog-card-header">
-              <span class="catalog-icon">📖</span>
+              <span class="catalog-icon" aria-hidden="true">📖</span>
               <div class="catalog-info">
                 <h3>Snack Dog / Snack Cat</h3>
                 <p>Catálogo Oficial Linha Snack</p>
@@ -1289,7 +1303,7 @@
           <a class="catalog-card" href="https://online.flippingbook.com/view/577682628/" target="_blank"
             rel="noopener noreferrer">
             <div class="catalog-card-header">
-              <span class="catalog-icon">📖</span>
+              <span class="catalog-icon" aria-hidden="true">📖</span>
               <div class="catalog-info">
                 <h3>Linha Caçador</h3>
                 <p>Catálogo Oficial Linha Caçador</p>
@@ -1316,18 +1330,18 @@
             </div>
 
             <div class="bullet-list">
-              <div class="bullet-item"><span class="bullet-icon">🐶</span><span><b>Cães:</b> Lunch Dog, Snack Dog,
+              <div class="bullet-item"><span class="bullet-icon" aria-hidden="true">🐶</span><span><b>Cães:</b> Lunch Dog, Snack Dog,
                   Caçador e X-PRO Training.</span></div>
-              <div class="bullet-item"><span class="bullet-icon">🐱</span><span><b>Gatos:</b> Lunch Cat, Snack Cat e
+              <div class="bullet-item"><span class="bullet-icon" aria-hidden="true">🐱</span><span><b>Gatos:</b> Lunch Cat, Snack Cat e
                   Caçador.</span></div>
-              <div class="bullet-item"><span class="bullet-icon">💼</span><span><b>Vantagens:</b> giro rápido,
+              <div class="bullet-item"><span class="bullet-icon" aria-hidden="true">💼</span><span><b>Vantagens:</b> giro rápido,
                   rentabilidade e facilidade no pedido único.</span></div>
             </div>
           </div>
           <div class="media-frame">
             <img class="img-cat"
               src="https://wsrv.nl/?output=webp&q=75&url=https%3A%2F%2Fnutriponta.com.br%2Fhero%2Fgato-section-mobile.jpeg&w=3840"
-              alt="Linha de gatos Nutriponta" loading="lazy" />
+              alt="Linha de gatos Nutriponta" width="1200" height="800" loading="lazy" />
           </div>
         </div>
         <div class="source-note">Linhas citadas no site oficial Nutriponta.</div>
@@ -1360,7 +1374,7 @@
     <section class="slide dark" data-slide="8" aria-label="Slide 8: Fechamento e Contato">
       <img class="slide-bg"
         src="https://wsrv.nl/?output=webp&q=75&url=https%3A%2F%2Fnutriponta.com.br%2Fimg-racoes-deposito.jpeg&w=3840"
-        alt="Depósito e Fábrica Nutriponta" loading="lazy" />
+        alt="Depósito e Fábrica Nutriponta" width="1920" height="1080" loading="lazy" />
       <div class="slide-overlay"></div>
 
       <div class="slide-content">
@@ -1371,7 +1385,7 @@
 
         <a class="cta-button" href="https://www.nutriponta.com.br/parceiros" target="_blank" rel="noopener noreferrer">
           Seja um Distribuidor Nutriponta
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
             <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
         </a>
@@ -1384,7 +1398,7 @@
   <!-- Floating Mobile Thumb Navigation Dock -->
   <nav class="nav-dock" aria-label="Navegação dos Slides">
     <button class="nav-arrow" id="btnPrev" title="Slide Anterior" aria-label="Slide Anterior">
-      <svg viewBox="0 0 24 24">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
         <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
       </svg>
     </button>
@@ -1394,14 +1408,14 @@
     </div>
 
     <button class="dock-menu-btn" id="btnOpenDrawer" aria-expanded="false" aria-controls="drawerOverlay">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
         <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" />
       </svg>
       Índice
     </button>
 
     <button class="nav-arrow" id="btnNext" title="Próximo Slide" aria-label="Próximo Slide">
-      <svg viewBox="0 0 24 24">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
         <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
       </svg>
     </button>
@@ -1415,22 +1429,22 @@
         <button class="close-drawer" id="btnCloseDrawer" aria-label="Fechar Índice">✕</button>
       </div>
       <div class="drawer-grid">
-        <button class="drawer-item" data-goto="1"><span class="drawer-num">1</span><span class="drawer-title">Capa &
+        <button class="drawer-item" data-goto="1"><span class="drawer-num">1</span><span class="drawer-title">Capa &amp;
             Visão Geral</span></button>
         <button class="drawer-item" data-goto="2"><span class="drawer-num">2</span><span class="drawer-title">Quem Somos
-            & Fábrica</span></button>
+            &amp; Fábrica</span></button>
         <button class="drawer-item" data-goto="3"><span class="drawer-num">3</span><span class="drawer-title">Proposta
-            B2B & Margem</span></button>
+            B2B &amp; Margem</span></button>
         <button class="drawer-item" data-goto="4"><span class="drawer-num">4</span><span class="drawer-title">Escada de
             Portfólio</span></button>
         <button class="drawer-item" data-goto="5"><span class="drawer-num">5</span><span class="drawer-title">Catálogos
             Interativos</span></button>
-        <button class="drawer-item" data-goto="6"><span class="drawer-num">6</span><span class="drawer-title">Mix Cães &
+        <button class="drawer-item" data-goto="6"><span class="drawer-num">6</span><span class="drawer-title">Mix Cães &amp;
             Gatos</span></button>
-        <button class="drawer-item" data-goto="7"><span class="drawer-num">7</span><span class="drawer-title">Presença &
+        <button class="drawer-item" data-goto="7"><span class="drawer-num">7</span><span class="drawer-title">Presença &amp;
             Distribuição</span></button>
         <button class="drawer-item" data-goto="8"><span class="drawer-num">8</span><span class="drawer-title">Fechamento
-            & Contato</span></button>
+            &amp; Contato</span></button>
       </div>
     </div>
   </div>
