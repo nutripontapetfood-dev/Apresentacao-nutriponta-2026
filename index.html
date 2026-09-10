@@ -260,10 +260,10 @@
       height: 100%;
       height: 100dvh;
       min-height: -webkit-fill-available;
-      padding: max(62px, calc(env(safe-area-inset-top) + 50px)) max(16px, env(safe-area-inset-left)) max(84px, calc(env(safe-area-inset-bottom) + 68px)) max(16px, env(safe-area-inset-right));
+      padding: max(56px, calc(env(safe-area-inset-top) + 44px)) max(14px, env(safe-area-inset-left)) max(80px, calc(env(safe-area-inset-bottom) + 64px)) max(14px, env(safe-area-inset-right));
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
+      justify-content: center;
       opacity: 0;
       visibility: hidden;
       transform: scale(0.98) translateY(8px);
@@ -273,7 +273,7 @@
       -webkit-overflow-scrolling: touch;
       overscroll-behavior-y: contain;
       touch-action: pan-y;
-      scroll-padding-bottom: 90px;
+      scroll-padding-bottom: 84px;
     }
 
     .slide.active {
@@ -346,12 +346,12 @@
     }
 
     .slide-title {
-      font-size: clamp(20px, 5.5vw, 42px);
-      line-height: 1.12;
+      font-size: clamp(18px, 4.8vw, 42px);
+      line-height: 1.15;
       font-weight: 900;
       letter-spacing: -0.03em;
       color: var(--navy-900);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       text-wrap: balance;
     }
 
@@ -360,11 +360,11 @@
     }
 
     .slide-subtitle {
-      font-size: clamp(13px, 3.4vw, 20px);
-      line-height: 1.4;
+      font-size: clamp(12px, 3.1vw, 20px);
+      line-height: 1.35;
       color: #34475e;
       max-width: 820px;
-      margin-bottom: 14px;
+      margin-bottom: 10px;
       font-weight: 500;
       text-wrap: pretty;
     }
@@ -425,12 +425,12 @@
     .media-frame {
       width: 100%;
       max-width: 480px;
-      height: clamp(240px, 36vh, 360px);
-      aspect-ratio: 4 / 3;
-      margin: 8px auto 0 auto;
+      height: clamp(160px, 24vh, 240px);
+      aspect-ratio: 16 / 10;
+      margin: 6px auto 0 auto;
       border-radius: var(--radius-md);
       overflow: hidden;
-      box-shadow: 0 12px 32px rgba(6, 38, 76, 0.18);
+      box-shadow: 0 10px 28px rgba(6, 38, 76, 0.16);
       border: 1px solid rgba(255, 255, 255, 0.15);
       position: relative;
       background: var(--navy-900);
@@ -790,6 +790,19 @@
       transform: translateY(-2px) scale(1.02);
       box-shadow: 0 12px 28px rgba(246, 166, 35, 0.5);
       color: var(--navy-900);
+    }
+
+    /* Touch Feedback for Native Mobile App Feel */
+    .kpi-card:active,
+    .feature-card:active,
+    .line-card:active,
+    .catalog-card:active,
+    .state-card:active,
+    .cta-button:active,
+    .nav-arrow:active,
+    .dock-menu-btn:active {
+      transform: scale(0.97) !important;
+      transition: transform 0.12s ease !important;
     }
 
     /* Bottom Navigation Dock (Thumb-Friendly) */
