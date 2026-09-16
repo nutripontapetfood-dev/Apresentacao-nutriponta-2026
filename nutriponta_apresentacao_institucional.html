@@ -1063,7 +1063,7 @@
 
       .states-grid {
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
         gap: 10px;
       }
 
@@ -1107,6 +1107,10 @@
         width: auto;
         padding: 6px 14px;
         gap: 12px;
+      }
+
+      .states-grid {
+        grid-template-columns: repeat(7, 1fr);
       }
     }
 
@@ -1343,7 +1347,7 @@
           abrir diretamente a versão completa.</p>
 
         <div class="catalog-grid">
-          <a class="catalog-card" href="https://online.flippingbook.com/view/497112258/" target="_blank"
+          <a class="catalog-card" href="https://nutriponta.aflip.in/catalogo-lunch" target="_blank"
             rel="noopener noreferrer">
             <div class="catalog-card-header">
               <span class="catalog-icon" aria-hidden="true">
@@ -1360,7 +1364,7 @@
             </div>
             <span class="catalog-btn">Abrir ↗</span>
           </a>
-          <a class="catalog-card" href="https://online.flippingbook.com/view/497420565/" target="_blank"
+          <a class="catalog-card" href="https://nutriponta.aflip.in/catalogo-snack" target="_blank"
             rel="noopener noreferrer">
             <div class="catalog-card-header">
               <span class="catalog-icon" aria-hidden="true">
@@ -1377,7 +1381,7 @@
             </div>
             <span class="catalog-btn">Abrir ↗</span>
           </a>
-          <a class="catalog-card" href="https://online.flippingbook.com/view/577682628/" target="_blank"
+          <a class="catalog-card" href="https://nutriponta.aflip.in/catalogo-cacador" target="_blank"
             rel="noopener noreferrer">
             <div class="catalog-card-header">
               <span class="catalog-icon" aria-hidden="true">
@@ -1446,8 +1450,10 @@
           <div class="state-card"><strong>RS</strong><span>Rio Grande do Sul</span></div>
           <div class="state-card"><strong>SC</strong><span>Santa Catarina</span></div>
           <div class="state-card"><strong>PR</strong><span>Paraná</span></div>
+          <div class="state-card"><strong>RJ</strong><span>Rio de Janeiro</span></div>
           <div class="state-card"><strong>MG</strong><span>Minas Gerais</span></div>
           <div class="state-card"><strong>BA</strong><span>Bahia</span></div>
+          <div class="state-card"><strong>PA</strong><span>Pará</span></div>
         </div>
 
         <p style="font-size:11px; color:var(--text-muted); margin-top:14px;">* Estados com distribuidores e parceiros
